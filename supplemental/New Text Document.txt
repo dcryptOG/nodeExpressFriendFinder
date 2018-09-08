@@ -1,0 +1,13 @@
+https://friend-finder-fsf.herokuapp.com/
+
+http://expressjs.com/en/starter/hello-world.html
+
+https://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488
+
+https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters
+
+https://sequelize.readthedocs.io/en/v3/
+
+https://dev.to/radditude/devdiscuss-recommends-programming-books
+
+https://github.com/gracepark/FriendFinder

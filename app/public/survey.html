@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <link rel='stylesheet' type='text/css' href='../css/style.css'>
+
+    <title>Geoff Dotson</title>
+</head>
+
+<body>
+    <section id='top' class='flex-container'>
+        <header class='flex-container'>Top
+        </header>
+    </section>
+
+    <span class='topPad'><a href="" id='topScroll'>Top Pad</a></span>
+
+    <section class='content'>
+        <div class='flex-container' id='contentPad'>Content Pad</div>
+        <div class='flex-container' id='content'>
+            <div class='pad'></div>
+            <div class='flex-container'>
+                <p>1. Question</p>
+            </div>
+            <div class='flex-container'>
+                <select>
+                    <option value="volvo">VolvoVolvoVolvoVolvoVolvoVolvoVolvoVolvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class='pad'></div>
+            <div class='flex-container'>
+                <p>1. Question</p>
+            </div>
+            <div class='flex-container'>
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class='pad'></div>
+            <div class='flex-container'>
+                <p>1. Question</p>
+            </div>
+            <div class='flex-container'>
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class='pad'></div>
+            <div class='flex-container'>
+                <p>1. Question</p>
+            </div>
+            <div class='flex-container'>
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class='pad'></div>
+            <div class='flex-container'>
+                <p>1. Question</p>
+            </div>
+            <div class='flex-container'>
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class='pad'></div>
+            <div class='flex-container'>
+                <p>1. Question</p>
+            </div>
+            <div class='flex-container'>
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class='pad'></div>
+            <div class='flex-container'>
+                <p>1. Question</p>
+            </div>
+            <div class='flex-container'>
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class='pad'></div>
+            <div class='flex-container'><button>Submit</button></div>
+        </div>
+        <div class='flex-container' id='contentPad'>Content Pad</div>
+    </section>
+
+    <section id='footer'>
+        <footer class="footer">
+            <nav class='footNav'>
+                <a href='#topScroll' class='footLink'>Back to Top</a>
+                <a href='#' class='footLink'>&copy;</a>
+            </nav>
+        </footer>
+    </section>
+</body>
+<script type="text/javascript">
+    $("#add-btn").on("click", function () {
+        event.preventDefault();
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+        };
+        alert("Searching for your match...");
+        $.post("/api/new", newFriend)
+            .done(function (data) {
+                console.log(data);
+                $('#caption').text(data.name);
+                $('#imagepreview').attr('src', data.photo);
+                $('#imagemodal').modal('show');
+            });
+        $("#name").val("");
+        $("#photo").val("");
+        [$("#q1").val(""), $("#q2").val(""), $("#q3").val(""), $("#q4").val(""), $("#q5").val(""), $("#q6").val(""), $("#q7").val(""), $("#q8").val(""), $("#q9").val(""), $("#q10").val("")]
+    });
+</script>
+
+</html>
+
+<!-- 
+    STEPS
+    https://codepen.io/collection/oxDAt/#
+    https://codepen.io/wallaceerick/pen/ctsCz
+
+    1 FORMAT INDEX
+
+    2 ADD ANIMATIONS
+
+        *Animate element
+
+            -https://codepen.io/rowilsonh/pen/qvlko
+            -https://codepen.io/donovanh/pen/QwdMKN
+
+        *Animate Rotating Words
+
+            -https://codepen.io/amritleone/pen/qERPmW                    
+        
+        *Animate Gradient Animation
+
+            -https://codepen.io/rachel_web/pen/dpYxPk
+
+        *FIREBASE FORM SUBMISSION
+
+            -https://discourse.skcript.com/t/how-do-i-create-a-contact-form-using-firebase-as-backend/392
+
+        *Animate Border
+
+            -https://codepen.io/Rplus/pen/lEDBj
+
+        *Animate on Click
+
+            -https://codepen.io/rowilsonh/pen/qvlko                    
+        *Animate
+
+            -          
+        *Animate
+
+            -              
+    3 ADD JS SCROLL
+
+        -https://css-tricks.com/smooth-scrolling-accessibility/
+        -https://codepen.io/AnotherLinuxUser/pen/eZxoQp
+        -https://css-tricks.com/snippets/jquery/smooth-scrolling/
+
+
+    4 DONE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    https://www.vertex42.com/ExcelTips/unicode-symbols.html#box
+
+
+                                main > section.posts > img{ outline: 1px solid red; width: 22vw; min-height: 100vh; margin: 0; padding: 0; flex-grow: 1;
+                            overflow: hidden; box-sizing: border-box; } main > section.posts > img{ /* Our suspect */ object-fit:
+                            cover; } http://jsfiddle.net/o2fx87ws/
+
+ -->
