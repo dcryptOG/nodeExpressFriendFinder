@@ -25,11 +25,11 @@
         <div class='flex-container' id='contentPad'>Content Pad</div>
         <div class='flex-container' id='content'>
             <div class='flex-container'>
-                <p>
-                    <a href="/api/friends">API Friends List
-                    </a>
-                    <a href="">GitHub</a></p>
+                <nav>
+                    <a href="">GitHub</a>
+                </nav>
             </div>
+        </div>
         </div>
         <div class='flex-container' id='contentPad'>Content Pad</div>
     </section>
@@ -43,6 +43,160 @@
         </footer>
     </section>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+    * {
+        outline: 1px dashed red;
+    }
 
+
+    html {
+        width: 100%;
+        font-weight: bold;
+        height: 100%;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1em;
+    }
+
+    body {
+        width: 100vw;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .flex-container {
+        display: flex;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #top {
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+    }
+
+    #top>header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        border-bottom: 5px solid black;
+        background: linear-gradient(to bottom right, forestgreen, limegreen);
+        display: inline-flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* FOOTER====================================================================================================== */
+
+    .topPad {
+        height: 10vh;
+    }
+
+    .content {
+        flex: 1 0 auto;
+        width: 100%;
+        display: flex;
+        word-break: break-word;
+        justify-content: space-between;
+    }
+
+    #contentPad {
+        align-content: stretch;
+        margin: auto;
+        padding: 1.5vw;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    #content {
+        display: flex;
+        flex-flow: column wrap;
+        overflow: none;
+        justify-content: center;
+        margin: auto 0;
+        background: rgba(192, 192, 192, 0.3);
+        padding: 2rem;
+        border-radius: 1rem;
+        width: 80vw;
+    }
+
+    #content::nth-child(n+1) {
+        white-space: nowrap;
+        word-break: break-word;
+        padding: 2em;
+    }
+
+
+    .pad {
+        width: 100%;
+        background: black;
+        display: flex;
+        margin: auto;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* FOOTER====================================================================================================== */
+
+
+    /* FOOTER====================================================================================================== */
+
+    .footer {
+        flex-shrink: 0;
+        display: flex;
+    }
+
+    footer {
+        display: flex;
+        flex-shrink: 0;
+        border-top: 0.1rem solid limegreen;
+    }
+
+    .footNav {
+        align-items: center;
+        align-items: space-around;
+        justify-content: center;
+        display: flex;
+        flex-flow: column wrap;
+        margin: auto;
+        text-align: center;
+    }
+
+
+    .footLink {
+        font-family: inherit;
+        margin: 0.5rem;
+    }
+
+    .footLink:nth-child(2) {
+        border-radius: 50%;
+        padding: 1rem;
+        border: 0.1rem solid black;
+    }
+
+    .footLink:nth-child(1) {
+        border: transparent;
+        display: flex;
+        flex-grow: 0.4;
+    }
+
+    .footLink:hover {
+        background: rgba(255, 255, 255, 0.5);
+        color: black;
+    }
+</style>
 </html>

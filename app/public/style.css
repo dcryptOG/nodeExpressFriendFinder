@@ -21,16 +21,6 @@ body {
     background-repeat: no-repeat;
 }
 
-/* html,
-body {
-    https://codepen.io/chriscoyier/pen/RRbKrL
-    https://css-tricks.com/couple-takes-sticky-footer/
-    https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-} */
-
 .flex-container {
     display: flex;
     margin: auto;
