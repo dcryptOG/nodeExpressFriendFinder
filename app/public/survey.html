@@ -37,7 +37,7 @@
                 <p>Question 1: Your mind is always buzzing with unexplored ideas and plans.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -49,7 +49,7 @@
                 <p>Question 2: Generally speaking, you rely more on your experience than your imagination.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -61,7 +61,7 @@
                 <p>Question 3: You find it easy to stay relaxed and focused even when there is some pressure.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -73,7 +73,7 @@
                 <p>Question 4: You rarely do something just out of sheer curiosity.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -86,7 +86,7 @@
                 <p>Question 5: People can rarely upset you.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -99,7 +99,7 @@
                 <p>Question 6: It is often difficult for you to relate to other people’s feelings.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -112,7 +112,7 @@
                 <p>Question 7: In a discussion, truth should be more important than people’s sensitivities.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -125,7 +125,7 @@
                 <p>Question 8: You rarely get carried away by fantasies and ideas.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -139,7 +139,7 @@
                     supported by facts or not.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -152,7 +152,7 @@
                 <p>10. You feel more energetic after spending time with a group of people.</p>
             </div>
             <div class='flex-container'>
-                <select>
+                <select id='select'>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -343,12 +343,46 @@ Name (Required)
 Link to Photo Image (Required)
  -->
 <script type="text/javascript">
-    var userInput = document.getElementById('userInput').value;
+    var selected = document.getElementById('select');
+    var newScores = document.getElementById('select').valule;
+    /*.push() scores?
+    json.stringify();
+    */
+//    document.getElementById
+   userInput.push();
+   json.stringify(
+
+   );
 
     userInput.addEventListener('click', function SUBMISSION() {
         event.preventDefault();
+        var newFriend = [
+            {
+                "name": "",
+                "photo": "",
+                "scores": "[]"
+            }, {
+
+            }
+        ];
         console.log("You got a friend bro");
     });
+
+    app.post("api/new", newFriend).done(console.log(data));
+
+    /*
+    use strict";
+
+function show_selected() {
+    var selector = document.getElementById('id_of_select');
+    var value = selector[selector.selectedIndex].value;
+
+    document.getElementById('display').innerHTML = value;
+}
+
+document.getElementById('btn').addEventListener('click', show_selected);;
+    */
+
     // $("#add-btn").on("click", function () {
     //     event.preventDefault();
     //     var newFriend = {
