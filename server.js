@@ -21,3 +21,12 @@ require("./app/routing/htmlRoutes.js")(app);
 app.listen(PORT, () => {
 	console.log("App listening on PORT: " + PORT);
 });
+
+
+/*
+steps 
+
+Edit htmlRoutes
+
+edit htmlRoutes & use loop from star wars
+*/
