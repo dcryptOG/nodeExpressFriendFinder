@@ -178,25 +178,35 @@
 </body>
 <script type="text/javascript">
 
-    var userName = document.getElementById('name').value;
-    var userPhoto = document.getElementById('photo').value;
+    var userName = document.getElementById('name');
+    var userPhoto = document.getElementById('photo');
     var score = document.getElementsByClassName('scoreMenu');
+    var text = document.getElementsByClassName('textInput');
     var submit = document.getElementById('submit');
+
+    // var userName = name.trim();
+    // var userPhoto = photo.trim();
     var userScore = [];
-    var userInput = [
-        {
-            "name": userName,
-            "photo": userPhoto,
-            "scores": userScore
-        }];
+
 
 
     submit.addEventListener('click', function (event) {
         event.preventDefault();
+        console.log(text.value);
+        console.log(userName.value);
+        var user = String(userName.value);
+        var photo = String(userPhoto.value);
         for (var i = 0; i < score.length; i++) {
             userScore.push(score[i].value);
         }
+        var userInput = [
+            {
+                "name": user,
+                "photo": photo,
+                "scores": userScore
+            }];
         console.log(userInput);
+        console.log(user);
         console.log("You got a friend bro");
     });
 </script>
