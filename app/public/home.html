@@ -90,28 +90,16 @@
     console.log(totalUser);
     var diff = [];
     for (i = 0; i < friends.length; i++) {
-        // let mapped = userScores.map(elem => elem - totalFriends);
         var totalFriends = friends[i].scores.reduce((a, b) => a + b, 0);
         console.log(totalFriends);
-        // var diff = userScores.map(function (num, idx) {
-        //     return num - totalFriends[idx];
-        // });
-        // match.push(totalFriends);
-        // console.log(match);
         var totalDiff = Math.abs(totalFriends - totalUser);
         diff.push(totalDiff);
-        // console.log(totalDiff);
-
     };
 
-    console.log(diff);
-
-    console.log(
-        Math.min(...diff)
-    );
-    console.log(diff.indexOf(7));
-    console.log(friends[4]);
-
+    let min = Math.min(...diff)
+    let matchI = diff.indexOf(min)
+    let match = friends[matchI];
+    console.log(match);
 </script>
 
 </html>
