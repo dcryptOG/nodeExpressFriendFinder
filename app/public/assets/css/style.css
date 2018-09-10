@@ -17,8 +17,9 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-image: url(../img/chibg.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 }
         
 .flex-container {
@@ -31,6 +32,7 @@ body {
 a {
         text-decoration: none;
         color: black;
+        font-family: 'Lobster', cursive;
 }
 /* FIXED TOP BAR======================================================================================== */
             
@@ -42,16 +44,21 @@ a {
             
 #top>header {
     position: fixed;
+    padding: 0.5rem;
     top: 0;
     width: 100%;
-    border-bottom: 5px solid black;
-    background: linear-gradient(to bottom right, forestgreen, limegreen);
+    border-bottom: 0.1vh solid rgba(245, 245, 245, 0.8);
+    background: rgba(229, 57, 53, 0.8);
     display: inline-flex;
     justify-content: center;
     flex-flow: row wrap;
     margin: auto;
     align-items: center;
     text-align: center;
+}
+
+#top>header>nav>a {
+    font-size: 2rem;
 }
             
 /* CONTENT GLOBALS ELEMENTS====================================================================================================== */
@@ -82,7 +89,6 @@ a {
     overflow: none;
     justify-content: center;
     margin: auto 0;
-    background: rgba(192, 192, 192, 0.3);
     padding: 2rem;
     border-radius: 1rem;
     width: 80vw;
@@ -93,8 +99,7 @@ a {
     word-break: break-word;
     padding: 2em;
 }
-            
-            
+             
 .pad {
     width: 100%;
     background: black;
@@ -111,6 +116,17 @@ a {
     display: flex;
     flex-flow: column wrap;
 }
+
+#content>.flex-container>nav {
+    background: rgba(229, 57, 53, 0.8);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+/*     background: rgba(245, 245, 245, 0.8); */ 
+}
+
+#content>.flex-container>nav>a {
+    font-size: 1.5rem;
+} 
 /* FOOTER====================================================================================================== */
             
 .footer {
@@ -121,7 +137,8 @@ a {
 footer {
     display: flex;
     flex-shrink: 0;
-    border-top: 0.1rem solid limegreen;
+    background: rgba(229, 57, 53, 0.8);
+    border-top: 0.1vh solid rgba(245, 245, 245, 0.8);
 }
             
 .footNav {
@@ -136,20 +153,28 @@ footer {
             
             
 .footLink {
-    font-family: inherit;
-    margin: 0.5rem;
+    margin: 0.2rem;   
 }
             
 .footLink:nth-child(2) {
     border-radius: 50%;
-    padding: 1rem;
-    border: 0.1rem solid black;
+    font-family: inherit;
+    padding: 1vh;
+    border: 0.1rem solid whitesmoke;
+    font-size: 0.6rem;
+    color: whitesmoke;
 }
             
 .footLink:nth-child(1) {
+    font-size: 5vh;
     border: transparent;
     display: flex;
     flex-grow: 0.4;
+    border-radius: 0.1rem;
+}
+
+.footLink:nth-child(1):hover {
+    border: 0.1rem solid black;
 }
             
 .footLink:hover {

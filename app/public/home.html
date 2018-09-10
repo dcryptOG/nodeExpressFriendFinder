@@ -8,6 +8,8 @@
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
 
     <link rel='stylesheet' type='text/css' href='../public/assets/css/style.css'>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
 
     <title>Dating App: For Registered Sex Offenders</title>
@@ -15,7 +17,10 @@
 
 <body>
     <section id='top' class='flex-container'>
-        <header class='flex-container'>Top
+        <header class='flex-container'>
+            <nav>
+                <a href="home.html">Dating App: for Registered Sex Offenders</a>
+            </nav>
         </header>
     </section>
 
@@ -26,7 +31,8 @@
         <div class='flex-container' id='content'>
             <div class='flex-container'>
                 <nav>
-                    <a href="https://friend-finder-node-exp.herokuapp.com/survey">Take a Survey</a>
+                    <a href="http://localhost:8080">(LOCAL HOST) Take a Survey Find Local Pervs Today</a>
+                    <a href="survey.html">(BROWSER)Take a Survey</a>
                 </nav>
             </div>
         </div>
@@ -74,7 +80,7 @@
         scores: [1, 1, 3, 3, 4, 1, 4, 4, 3, 1]
     }];
 
-    var userScores = [5, 5, 1, 5, 5, 5, 5, 5, 5, 1];
+    var userScores = [5, 5, 1, 5, 5, 5, 5, 5, 5, 2];
 
     A = [1, 2, 3, 4];
     B = [1, 3, 4, 7];
@@ -97,6 +103,7 @@
         // console.log(totalDiff);
 
     };
+
     console.log(diff);
     // var match = diff.reduce(function (a, b) {
     //     return Math.min(a, b);
