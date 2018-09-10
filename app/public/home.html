@@ -57,7 +57,7 @@
     }, {
         name: "Laura Toner",
         photo: "",
-        scores: [1, 5, 9, 6, 5, 3, 5, 3, 1, 4]
+        scores: [1, 5, 9, 50, 5, 3, 5, 3, 1, 4]
     }, {
         name: "Chrissy Boner",
         photo: "",
@@ -105,17 +105,12 @@
     };
 
     console.log(diff);
-    // var match = diff.reduce(function (a, b) {
-    //     return Math.min(a, b);
-    // });
-    // var match = Object.values(diff).map(function (key) { return diff[key]; });
-    // console.log(match);
-    // var min = Math.min.apply(null, arr);
 
-    // var freindScores = friends.filter((scores) => {
-    // totalDiff = userScores.filter(x => totalFriends.indexOf(x) < 0)
-    // });
-
+    console.log(
+        Math.min(...diff)
+    );
+    console.log(diff.indexOf(7));
+    console.log(friends[4]);
 
 </script>
 
