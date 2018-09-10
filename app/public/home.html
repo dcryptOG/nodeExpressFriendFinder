@@ -85,21 +85,20 @@
     A = [1, 2, 3, 4];
     B = [1, 3, 4, 7];
 
+    // this info can be sent from survey in app.js
     var totalUser = userScores.reduce((a, b) => a + b, 0);
-
-    console.log(totalUser);
+    // THIS would go into API 
     var diff = [];
     for (i = 0; i < friends.length; i++) {
         var totalFriends = friends[i].scores.reduce((a, b) => a + b, 0);
-        console.log(totalFriends);
         var totalDiff = Math.abs(totalFriends - totalUser);
         diff.push(totalDiff);
     };
-
     let min = Math.min(...diff)
     let matchI = diff.indexOf(min)
     let match = friends[matchI];
     console.log(match);
+    // CAN I USE REQUIRE EXPRESS AND USE THE APP TO 
 </script>
 
 </html>
