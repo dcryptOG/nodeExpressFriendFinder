@@ -90,6 +90,7 @@ a {
     justify-self: center;
     align-content: center;
     margin: 0 auto;
+    padding: 0;
 }
 /*             
 #contentPad {
@@ -106,7 +107,7 @@ a {
     overflow: none;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2vh 2vw;
     border-radius: 1rem;
     width: 90vw;
     align-content: center;
