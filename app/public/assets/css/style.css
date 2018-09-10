@@ -30,9 +30,9 @@ body {
 }
             
 a {
-        text-decoration: none;
-        color: black;
-        font-family: 'Lobster', cursive;
+    text-decoration: none;
+    color: black;
+    font-family: 'Lobster', cursive;
 }
 /* FIXED TOP BAR======================================================================================== */
             
@@ -46,7 +46,7 @@ a {
     position: fixed;
     padding: 0.5rem;
     top: 0;
-    width: 100%;
+    width: 100vw;
     border-bottom: 0.1vh solid rgba(245, 245, 245, 0.8);
     background: rgba(229, 57, 53, 1);
     display: inline-flex;
@@ -69,30 +69,32 @@ a {
             
 .content {
     flex: 1 0 auto;
-    width: 100%;
+    width: 100vw;
     display: flex;
+    flex-wrap: wrap;
     word-break: break-word;
-    justify-content: space-between;
+    justify-self: center;
     align-content: center;
+    margin: 0 auto;
 }
-            
+/*             
 #contentPad {
     align-content: stretch;
     margin: auto;
-    padding: 1.5vw;
+    padding: 2.5vw;
     display: flex;
     flex-flow: column wrap;
-}
+} */
             
 #content {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     overflow: none;
-    justify-content: center;
-    margin: auto 0;
+    justify-content: space-around;
+    margin: 0 auto;
     padding: 2rem;
     border-radius: 1rem;
-    width: 80vw;
+    width: 90vw;
     align-content: center;
 }
             
@@ -103,13 +105,14 @@ a {
 }
              
 .pad {
-    width: 100%;
-    background: black;
+    width: 80vw;
+    background: solid rgba(245, 245, 245, 0.6);
     display: flex;
+    flex-flow: row wrap;
     margin: auto;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    border: 0.1vw solid rgba(0, 0, 0, 0.1);
+    border: 0.1vw solid rgba(245, 245, 245, 0.6);
 }
             
 /* CONTENT ELEMENTS====================================================================================================== */
@@ -136,7 +139,7 @@ a {
      flex-flow: row wrap;
     width: 80vw;
     text-align: center;
-        border: 0.05rem solid rgba(245, 245, 245, 0.8);
+    border: 0.05rem solid rgba(245, 245, 245, 0.2);
     border-radius: 0.1rem;
     padding: 0.1rem;
 }
