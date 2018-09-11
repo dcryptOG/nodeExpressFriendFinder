@@ -10,22 +10,20 @@ module.exports = function (app) {
     });
 
     app.post("/api/new", function (req, res) {
-        //variables for finding match
-        var newFriend = req.body;
-        console.log(newFriend);
-        var newScore = newFriend.scores;
-        console.log(newScore);
-        var total = 0;
-
-        for (var i = 0; i < friends.length; i++) {
-            return res.json(friends[index]);
-            //Iterate through the whole list of friends already in database
-            total = 0;
-            var diff = Math.abs(newScore[j] - friends[i].scores[j]);
-            total += diff;
-        }
-
-        friends.push(newFriend);
-        res.json(friends[index]);
+        console.log(req);
+        var totalUser = userScore.reduce((a, b) => a + b + 0, 0);
+        console.log(totalUser);
+        // THIS would go into API 
+        var diff = [];
+        for (i = 0; i < friends.length; i++) {
+            var totalFriends = friends[i].scores.reduce((a, b) => a + b, 0);
+            var totalDiff = Math.abs(totalFriends - totalUser);
+            diff.push(totalDiff);
+        };
+        let min = Math.min(...diff)
+        let matchI = diff.indexOf(min)
+        let match = friends[matchI];
+        console.log(match);
+        // CAN I USE REQUIRE EXPRESS AND USE THE APP TO 
     });
 };

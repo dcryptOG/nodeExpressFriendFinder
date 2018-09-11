@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
 
-    <link rel='stylesheet' type='text/css' href='../public/assets/css/style.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
@@ -185,6 +185,7 @@
         </footer>
     </section>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 
     var userName = document.getElementById('name');
@@ -193,6 +194,7 @@
     var text = document.getElementsByClassName('textInput');
     var submit = document.getElementById('submit');
     var userScore = [];
+    // this info can be sent from survey in app.js
 
     submit.addEventListener('click', function (event) {
         event.preventDefault();
@@ -202,15 +204,23 @@
         var photo = String(userPhoto.value);
         for (var i = 0; i < score.length; i++) {
             userScore.push(score[i].value);
+
         }
-        var userInput = [
-            {
-                "name": user,
-                "photo": photo,
-                "scores": userScore
-            }];
-        console.log(userInput);
-        console.log("You got a friend bro");
+        console.log(userScore);
+        // var totalUser = userScore.reduce((a, b) => a + b + 0, 0);
+        // console.log(totalUser);
+        $.post("http://localhost:8080/api/new", function (userScore) {
+            // $(".result").html(userScore);
+            console.log('test');
+        });
+        // var userInput = [
+        //     {
+        //         "name": user,
+        //         "photo": photo,
+        //         "scores": userScore
+        //     }];
+        // console.log(userInput);
+        // console.log("You got a friend bro");
     });
 </script>
 
