@@ -187,7 +187,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-
     var userName = document.getElementById('name');
     var userPhoto = document.getElementById('photo');
     var score = document.getElementsByClassName('scoreMenu');
@@ -212,32 +211,18 @@
         }
         console.log(userScore);
         console.log(userInput);
-
+        $.post("api/new", { userInput }, function () {
+            // $(".result").html(userScore);
+            console.log('test');
+        }).done(function () {
+            alert("second success");
+        }).fail(function () {
+            alert("error");
+        });
+    });
         // var totalUser = userScore.reduce((a, b) => a + b + 0, 0);
         // console.log(totalUser);
-        fetch('api/new', { method: 'POST' })
-            .then(function (response) {
-                if (response.ok) {
-                    console.log(response);
-                    return;
-                }
-                throw new Error('Request failed.');
-            })
-            .catch(function (error) {
-                console.log(error);
 
-                // console.log(userInput);
-                // console.log("You got a friend bro");
-            });
-    });
 </script>
 
 </html>
-<!-- $.post(currentURL + "api/new", userInput, function () {
-// $(".result").html(userScore);
-console.log('test');
-}).done(function () {
-alert("second success");
-}).fail(function () {
-alert("error");
-}); -->
