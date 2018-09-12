@@ -194,23 +194,29 @@
     var text = document.getElementsByClassName('textInput');
     var submit = document.getElementById('submit');
     var userScore = [];
+
+    var currentURL = window.location.origin;
     // this info can be sent from survey in app.js
 
     submit.addEventListener('click', function (event) {
         event.preventDefault();
-        console.log(text.value);
-        console.log(userName.value);
+        var currentURL = window.location.origin;
         var user = String(userName.value);
         var photo = String(userPhoto.value);
         for (var i = 0; i < score.length; i++) {
             userScore.push(score[i].value);
-
+            var userInput = [
+                {
+                    "scores": userScore
+                }];
         }
         console.log(userScore);
+        console.log(userInput);
+
         // var totalUser = userScore.reduce((a, b) => a + b + 0, 0);
         // console.log(totalUser);
         console.log("JQ" + $.post);
-        $.post("api/new", { userScore: userScore }, function () {
+        $.post(currentURL + "api/new", userInput, function () {
             // $(".result").html(userScore);
             console.log('test');
         }).done(function () {
@@ -218,12 +224,7 @@
         }).fail(function () {
             alert("error");
         });
-        // var userInput = [
-        //     {
-        //         "name": user,
-        //         "photo": photo,
-        //         "scores": userScore
-        //     }];
+
         // console.log(userInput);
         // console.log("You got a friend bro");
     });
