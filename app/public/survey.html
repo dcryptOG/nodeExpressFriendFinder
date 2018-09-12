@@ -7,7 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
 
-    <link rel='stylesheet' type='text/css' href='public/style.css'>
+    <link rel='stylesheet' type='text/css' href='style.css'>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
@@ -209,9 +209,14 @@
         console.log(userScore);
         // var totalUser = userScore.reduce((a, b) => a + b + 0, 0);
         // console.log(totalUser);
-        $.post("http://localhost:8080/api/new", function (userScore) {
+        console.log("JQ" + $.post);
+        $.post("api/new", { userScore: userScore }, function () {
             // $(".result").html(userScore);
             console.log('test');
+        }).done(function () {
+            alert("second success");
+        }).fail(function () {
+            alert("error");
         });
         // var userInput = [
         //     {

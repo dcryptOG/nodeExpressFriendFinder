@@ -10,8 +10,11 @@ module.exports = function (app) {
     });
 
     app.post("/api/new", function (req, res) {
-        console.log(req);
-        var totalUser = userScore.reduce((a, b) => a + b + 0, 0);
+        console.log(userSore);
+
+        var userScore2 = { ...req.body.userScore };
+        console.log(userScore2);
+        var totalUser = userScore2.reduce((a, b) => a + b + 0, 0);
         console.log(totalUser);
         // THIS would go into API 
         var diff = [];

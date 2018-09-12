@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-image: url(../img/chibg.jpg);
+    background-image: url(chibg.jpg);
     background-size: cover;
     background-repeat: repeat;
 }
@@ -89,7 +89,8 @@ a {
     word-break: break-word;
     justify-self: center;
     align-content: center;
-    margin: 0 auto;
+    margin-top: 12.5vh;
+    /* margin: 0 auto; */
     padding: 0;
 }
 /*             

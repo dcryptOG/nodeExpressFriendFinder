@@ -5,7 +5,7 @@
 */
 const path = require('path');
 
-module.exports = function (app) {
+module.exports = (app) => {
 	// directs user to the survey HTML if survey domain is used or button press
 	app.get('/survey', (req, res) => {
 		res.sendFile(path.join(__dirname, '/../public/survey.html'));

@@ -89,7 +89,7 @@ a {
     word-break: break-word;
     justify-self: center;
     align-content: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 0;
 }
 /*             
