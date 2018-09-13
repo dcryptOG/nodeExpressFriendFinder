@@ -211,8 +211,9 @@
         }
         console.log(userScore);
         console.log(userInput);
-        $.post("api/new", { userInput }, function () {
+        $.post("api/new", { userInput }, function (res) {
             // $(".result").html(userScore);
+            console.log(res);
             console.log('test');
         }).done(function () {
             alert("second success");
