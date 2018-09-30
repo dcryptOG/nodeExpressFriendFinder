@@ -1,27 +1,65 @@
-* {
-    outline: 1px dashed red;
+/* GLOBALS ======================================================================================== */
+/* GLOBALS ======================================================================================== */
+
+:root {
+    /* declare variables here... on :root pseudo-class */
+    /* colours */
+    --color-grey: rgba(220, 231, 235, 1);
+    --color-semi-black: rgba(48, 69, 92, 0.5);
+    --color-black: rgba(48, 69, 92, 1);
+    --color-white: rgba(255, 255, 255, 1);
+    --color-red: rgba(255, 104, 115, 1);
+    --color-blue: rgba(34, 190, 198, 1);
+    /* fonts */
+    --font-main: 'Josefin Sans', sans-serif;
+    --font-heading: 'Lobster', cursive;
+    /* font-sizes */
+    --size-normal: 1rem;
+    --size-mid: 1.5rem;
+    --size-big: 2rem;
+    /* font-weights */
+    --weight-normal: 500;
+    --weight-bold: 700;
+    /* padings */
+    --gapSmall: 1vh 1vw;
+    --gapMed: 2vh 2vw;
+    --gapLarge: 3vh 3vw;
+    /* borders */
+    --borderSm: 0.05rem;
+    --borderMed: 0.1rem;
 }
 
-/* GLOBALS ======================================================================================== */
 html {
+    /* make sure we use up the whole viewport */
     width: 100%;
-    font-weight: bold;
     height: 100%;
-    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-family: var(--font-main);
     font-size: 1em;
-}
-            
-body {
-    width: 100vw;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-image: url(chibg.jpg);
-    background-size: cover;
-    background-repeat: repeat;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: auto;
 }
-        
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: auto;
+    justify-self: auto;
+    margin: auto;
+    background: url(../img/hearts.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
 .flex-container {
     display: flex;
     margin: auto;
@@ -29,20 +67,21 @@ body {
     text-align: center;
     align-items: center;
 }
-            
+
 a {
     text-decoration: none;
     color: black;
     font-family: 'Lobster', cursive;
 }
+
 /* FIXED TOP BAR======================================================================================== */
-            
+
 #top {
     display: flex;
     position: fixed;
     justify-content: space-between;
 }
-            
+
 #top>header {
     position: fixed;
     padding: 0.5rem;
@@ -69,18 +108,18 @@ a {
     flex-wrap: nowrap;
     padding: 0.5rem 1rem;
     text-align: center;
-   font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive;
     font-weight: bold;
     background: rgba(229, 57, 53, 1);
     margin: 1rem;
 }
-            
+
 /* CONTENT GLOBALS ELEMENTS====================================================================================================== */
 
 .topPad {
     height: 10vh;
 }
-            
+
 .content {
     flex: 1 0 auto;
     width: 100vw;
@@ -93,6 +132,7 @@ a {
     /* margin: 0 auto; */
     padding: 0;
 }
+
 /*             
 #contentPad {
     align-content: stretch;
@@ -101,7 +141,7 @@ a {
     display: flex;
     flex-flow: column wrap;
 } */
-            
+
 #content {
     display: flex;
     flex-flow: row wrap;
@@ -113,13 +153,13 @@ a {
     width: 90vw;
     align-content: center;
 }
-            
+
 #content::nth-child(n+1) {
     white-space: nowrap;
     word-break: break-word;
     padding: 2em;
 }
-             
+
 .pad {
     width: 100%;
     background: solid rgba(245, 245, 245, 0.6);
@@ -131,9 +171,9 @@ a {
     margin-top: 1rem;
     border: 0.1vw solid rgba(245, 245, 245, 0.6);
 }
-            
+
 /* CONTENT ELEMENTS====================================================================================================== */
-            
+
 #form-control {
     display: flex;
     flex-flow: column wrap;
@@ -143,17 +183,52 @@ a {
     background: rgba(229, 57, 53, 0.8);
     border-radius: 0.5rem;
     padding: 0.5rem;
-/*     background: rgba(245, 245, 245, 0.8); */ 
+    /*     background: rgba(245, 245, 245, 0.8); */
 }
+
+#submit {
+    cursor: pointer;
+    border-radius: 0.1rem;    
+}
+
+
+select {
+  background: rgba(229, 57, 53, 0.1);
+  color: whitesmoke;
+  cursor: grab;
+}
+
+select:focus {
+    border: 0.1rem solid rgba(229, 57, 53);
+}
+
+select option {
+    background: rgba(229, 57, 53, 0.8);
+}
+
+select:after {
+        content: "▼";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        font-size: 60%;
+        line-height: 30px;
+        padding: 0 7px;
+        background: red;
+        color: white;
+        
+        pointer-events:none;
+    }
 
 #content>.flex-container>nav>a {
     font-size: 1.5rem;
-} 
+}
 
 #content>.flex-container>p {
     background: rgba(229, 57, 53, 0.8);
     display: flex;
-     flex-flow: row wrap;
+    flex-flow: row wrap;
     width: 80vw;
     text-align: center;
     border: 0.05rem solid rgba(245, 245, 245, 0.2);
@@ -164,7 +239,7 @@ a {
 #content>.flex-container>label>p {
     background: rgba(229, 57, 53, 0.8);
     display: flex;
-     flex-flow: row wrap;
+    flex-flow: row wrap;
     width: 80vw;
     text-align: center;
     border: 0.05rem solid rgba(245, 245, 245, 0.8);
@@ -203,24 +278,26 @@ a {
     margin-left: -150px;
     margin-top: -100px;
 }
+
 .popup .wrap img {
     height: 100%;
     vertical-align: top;
 }
+
 /* FOOTER====================================================================================================== */
-            
+
 .footer {
     flex-shrink: 0;
     display: flex;
 }
-            
+
 footer {
     display: flex;
     flex-shrink: 0;
     background: rgba(229, 57, 53, 0.8);
     border-top: 0.1vh solid rgba(245, 245, 245, 0.8);
 }
-            
+
 .footNav {
     align-items: center;
     align-items: space-around;
@@ -230,12 +307,12 @@ footer {
     margin: auto;
     text-align: center;
 }
-            
-            
+
+
 .footLink {
-    margin: 0.2rem;   
+    margin: 0.2rem;
 }
-            
+
 .footLink:nth-child(2) {
     border-radius: 50%;
     font-family: inherit;
@@ -244,7 +321,7 @@ footer {
     font-size: 0.6rem;
     color: whitesmoke;
 }
-            
+
 .footLink:nth-child(1) {
     font-size: 5vh;
     border: transparent;
@@ -256,7 +333,7 @@ footer {
 .footLink:nth-child(1):hover {
     border: 0.1rem solid black;
 }
-            
+
 .footLink:hover {
     background: rgba(255, 255, 255, 0.5);
     color: black;
