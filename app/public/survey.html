@@ -182,6 +182,13 @@
         <div class='flex-container' id='contentPad'></div>
     </section>
 
+    <section>
+        <div class="flex-container">
+            <picture>
+                <img src="https://edge.alluremedia.com.au/uploads/businessinsider/2018/03/bezos-iguana.jpg" alt="">
+            </picture>
+        </div>
+    </section>
     <section id='footer'>
         <footer class="footer">
             <nav class='footNav'>
@@ -223,11 +230,19 @@
             console.log(res);
             console.log('test');
             console.log(res.name);
-            var h3 = document.createElement("H3") // Create a <h1> element
+            var h3 = document.createElement("H3"); // Create a <h1> element
             var match = document.getElementById('match');
+            var p = document.createElement("picture");
+            var img = document.createElement("img");
             var nt = document.createTextNode(res.name);
+            h3.setAttribute("id", "matchName");
             h3.appendChild(nt);
             match.appendChild(h3);
+            img.setAttribute("src", res.photo);
+            p.appendChild(img);
+            match.appendChild(p);
+
+            //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
         }).done(function () {
             console.log('success');
         }).fail(function () {
