@@ -174,12 +174,34 @@ a {
     width: 90vw;
     background: solid rgba(245, 245, 245, 0.3);
     display: flex;
-    flex-flow: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     margin: auto;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    border: 0.1vw solid rgba(245, 245, 245, 0.6);
+    border: 0.1vw solid rgba(245, 245, 245, 0.3);
+}
+
+picture {
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-grow: 1;
+    max-height: 30vw;
+    max-width: 30vw;
+    margin: auto;
+}
+
+picture>img {
+    display: flex;
+
+    margin: auto;
+    max-height: 25vw;
+    max-width: 25vw;
+    padding: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    object-fit: contain;
 }
 
 /* ======================================================== */
