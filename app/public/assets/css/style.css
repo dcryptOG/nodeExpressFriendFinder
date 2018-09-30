@@ -151,7 +151,7 @@ a {
     align-content: center;
 }
 
-#content::nth-child(n+1) {
+#content:nth-child(n+1) {
     white-space: nowrap;
     word-break: break-word;
     padding: 2em;
@@ -169,6 +169,25 @@ a {
     border: 0.1vw solid rgba(245, 245, 245, 0.6);
 }
 
+/* ======================================================== */
+
+#homeNav {
+    background: rgba(229, 57, 53, 0.8);
+    height: 25vh;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: rgba(229, 57, 53, 0.8);
+    border-radius: 1rem;
+    font-size: var(--size-big);
+}
+
+#homeNav>a {
+    margin: 1rem;
+}
+
 /* CONTENT ELEMENTS====================================================================================================== */
 
 #form-control {
@@ -176,12 +195,10 @@ a {
     flex-flow: column wrap;
 }
 
-#content>.flex-container>nav {
-    background: rgba(229, 57, 53, 0.8);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    /*     background: rgba(245, 245, 245, 0.8); */
-}
+/* #content>.flex-container>nav {
+
+        background: rgba(245, 245, 245, 0.8);
+} */
 
 #submit {
     cursor: pointer;
@@ -340,6 +357,8 @@ footer {
 select option,
 input:focus,
 select:hover,
+nav:hover,
+nav>a:hover,
 a:hover,
 #submit:hover {
     animation: pulse 3s infinite;
