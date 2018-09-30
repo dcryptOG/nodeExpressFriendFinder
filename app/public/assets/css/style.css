@@ -61,6 +61,16 @@ body {
     height: 100vh;
 }
 
+p::selection {
+    color: whitesmoke;
+    background: black;
+}
+
+a::selection {
+    color: whitesmoke;
+    background: black;
+}
+
 .flex-container {
     display: flex;
     margin: auto;
@@ -297,6 +307,10 @@ select option:focus-within {
     background: black;
 }
 
+#match {
+    display
+}
+
 /* FOOTER====================================================================================================== */
 
 .footer {
@@ -348,6 +362,10 @@ footer {
 .footLink:hover {
     background: rgba(255, 255, 255, 0.5);
     color: black;
+}
+
+#match {
+    flex-flow: column wrap;
 }
 
 /* animations================================================= */
