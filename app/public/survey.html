@@ -21,11 +21,12 @@
             <nav>
                 <a href="home.html">&#10084; Dating App &#10084;</a>
             </nav>
-            <div class='flex-container' id='match'>
-                <p id='matchName'></p>
-                <picture id='matchPic'></picture>
-                <p id='matchScore'></p>
-                <button type="button" onClick="window.location.reload();">Close</button>
+            <div class='flex-container' id='match' class='love'>
+                <p class='love'>&#x1F497; &#x1F497; &#x1F497; &#x1F497; &#x1F497;</p>
+                <p id='matchName' class='love'></p>
+                <picture id='matchPic' class='love'></picture>
+                <p id='matchScore' class='love'></p>
+                <button id='restart' type="button" onClick="window.location.reload();">Close</button>
             </div>
         </header>
     </section>
@@ -205,7 +206,7 @@
         var userPhoto = document.getElementById('photo');
         var score = document.getElementsByClassName('scoreMenu');
         var text = document.getElementsByClassName('textInput');
-        var submit = document.getElementById('submit');
+        var subBox = document.getElementById('subBox');
         var userScore = [];
 
         var currentURL = window.location.origin;
@@ -238,13 +239,14 @@
                 var img = document.createElement("img");
                 var matchScore = document.getElementById("matchScore");
                 var st = document.createTextNode(res.scores);
+                var a = document.getElementById("again");
                 match.style.display = 'flex';
 
                 matchName.appendChild(nt);
                 img.setAttribute("src", res.photo);
                 p.appendChild(img);
                 matchScore.appendChild(st);
-
+                a.style.display = 'flex';
                 //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
             }).done(function () {
                 console.log('success');

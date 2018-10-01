@@ -193,6 +193,7 @@ picture>img {
     overflow: hidden;
     box-sizing: border-box;
     object-fit: contain;
+    border-radius: 1rem;
 }
 
 /* ======================================================== */
@@ -295,6 +296,34 @@ select option:focus-within {
     text-align: center;
     align-items: center;
     flex-flow: column wrap;
+    font-family: var(--font-heading);
+    font-size: var(--size-big);
+    font-weight: bolder;
+    height: 80vw;
+}
+
+#match>p {
+    background: none;
+    border: none;
+    font-family: var(--font-heading);
+    font-size: var(--size-big);
+    font-weight: bolder;
+}
+
+#restart {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: 0.1rem solid whitesmoke;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 2rem;
+    background: rgba(229, 57, 53, 1);
+    margin: 1rem;
+    width: 20vw;
 }
 
 /* FOOTER====================================================================================================== */
@@ -351,6 +380,31 @@ footer {
 }
 
 /* animations================================================= */
+.love {
+    animation: .8s infinite beatHeart;
+}
+
+@keyframes beatHeart {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 select option,
 input:focus,
