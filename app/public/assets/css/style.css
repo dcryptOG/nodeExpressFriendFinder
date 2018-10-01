@@ -322,7 +322,7 @@ select option:focus-within {
     font-weight: bold;
     font-size: 2rem;
     background: rgba(229, 57, 53, 1);
-    margin: auto;
+    margin: 0;
     width: 20vw;
 }
 

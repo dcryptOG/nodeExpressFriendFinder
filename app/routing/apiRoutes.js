@@ -15,7 +15,6 @@ module.exports = function (app) {
         var userInput = req.body;
         console.log(userInput);
         console.log(typeof userInput);
-
         let t2 = Object.values(userInput);
         console.log(t2);
         let t3 = t2[0];
@@ -36,18 +35,20 @@ module.exports = function (app) {
 
         // Take the difference of "User Sum" and the "Friend Sum" for each individual. 
 
-
         var diff = [];
         for (i = 0; i < friends.length; i++) {
             var totalFriends = friends[i].scores.reduce((a, b) => a + b, 0);
             var totalDiff = Math.abs(totalFriends - totalUser);
             diff.push(totalDiff);
         };
+        // console.log(diff);
         // diff is a NEW array with SAME INDEX or KEY as FRIENDS(original) DIFFERENT VALUES. 
         // BELOW finds the min of the array and matches the KEY or INDEX#
 
         let min = Math.min(...diff)
+        // console.log(min);
         let matchI = diff.indexOf(min)
+        // console.log(matchI);
         let match = friends[matchI];
         console.log(match);
         res.json(match);
