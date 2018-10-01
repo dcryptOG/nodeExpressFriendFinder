@@ -3,7 +3,6 @@ window.onload = function () {
     var userPhoto = document.getElementById('photo');
     var score = document.getElementsByClassName('scoreMenu');
     var text = document.getElementsByClassName('textInput');
-    var subBox = document.getElementById('subBox');
     var userScore = [];
 
     var currentURL = window.location.origin;

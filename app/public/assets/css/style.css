@@ -180,12 +180,13 @@ picture {
     flex-grow: 1;
     max-height: 30vw;
     max-width: 30vw;
-    margin: auto;
+    margin: 0 auto;
+    border-radius: 1em;
 }
 
 picture>img {
     display: flex;
-    margin: auto;
+    margin: 0;
     max-height: 25vw;
     max-width: 25vw;
     padding: 0;
@@ -193,7 +194,7 @@ picture>img {
     overflow: hidden;
     box-sizing: border-box;
     object-fit: contain;
-    border-radius: 1rem;
+    border-radius: 1em;
 }
 
 /* ======================================================== */
@@ -290,16 +291,34 @@ select option:focus-within {
 }
 
 #match {
-    display: none;
+    word-break: break-word;
+    justify-self: center;
+    align-content: center;
+    hyphens: auto;
     margin: auto;
-    flex-wrap: wrap;
+    overflow: none;
+    overflow-wrap: break-word;
+    padding: 0;
+    display: none;
     text-align: center;
     align-items: center;
     flex-flow: column wrap;
     font-family: var(--font-heading);
     font-size: var(--size-big);
     font-weight: bolder;
-    height: 40vw;
+    height: 90vw;
+}
+
+#matchName {
+    max-height: 10vw;
+}
+
+#matchScores {
+    max-height: 10vw;
+}
+
+.love {
+    margin: 0
 }
 
 #match>p {
