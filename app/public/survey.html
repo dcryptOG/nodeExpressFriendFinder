@@ -10,7 +10,7 @@
     <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-
+    <!-- <script src="assets/js/app.js"></script> -->
 
     <title>Dating App</title>
 </head>
@@ -21,7 +21,9 @@
             <nav>
                 <a href="home.html">&#10084; Dating App &#10084;</a>
             </nav>
-            <div class='flex-container' id='match'></div>
+            <div class='flex-container' id='match'>
+                <button type="button" onClick="window.location.reload();">Close</button>
+            </div>
         </header>
     </section>
     <section>
@@ -194,58 +196,69 @@
     </section>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-    var userName = document.getElementById('name');
-    var userPhoto = document.getElementById('photo');
-    var score = document.getElementsByClassName('scoreMenu');
-    var text = document.getElementsByClassName('textInput');
-    var submit = document.getElementById('submit');
-    var userScore = [];
+<script>
+    window.onload = function () {
+        var userName = document.getElementById('name');
+        var userPhoto = document.getElementById('photo');
+        var score = document.getElementsByClassName('scoreMenu');
+        var text = document.getElementsByClassName('textInput');
+        var submit = document.getElementById('submit');
+        var userScore = [];
 
-    var currentURL = window.location.origin;
-    // this info can be sent from survey in app.js
-
-    submit.addEventListener('click', function (event) {
-        event.preventDefault();
         var currentURL = window.location.origin;
-        var user = String(userName.value);
-        var photo = String(userPhoto.value);
-        for (var i = 0; i < score.length; i++) {
-            userScore.push(score[i].value);
-            var userInput = [{
-                "scores": userScore
-            }];
-        }
-        console.log(userScore);
-        console.log(userInput);
-        $.post("api/new", {
-            userInput
-        }, function (res) {
-            // $(".result").html(userScore);
-            console.log(res);
-            console.log('test');
-            console.log(res.name);
-            var h3 = document.createElement("H3"); // Create a <h1> element
-            var match = document.getElementById('match');
-            var p = document.createElement("picture");
-            var img = document.createElement("img");
-            var nt = document.createTextNode(res.name);
-            h3.setAttribute("id", "matchName");
-            h3.appendChild(nt);
-            match.appendChild(h3);
-            img.setAttribute("src", res.photo);
-            p.appendChild(img);
-            match.appendChild(p);
+        // this info can be sent from survey in app.js
 
-            //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
-        }).done(function () {
-            console.log('success');
-        }).fail(function () {
-            alert("error");
+        submit.addEventListener('click', function (event) {
+            event.preventDefault();
+            var currentURL = window.location.origin;
+            var user = String(userName.value);
+            var photo = String(userPhoto.value);
+            for (var i = 0; i < score.length; i++) {
+                userScore.push(score[i].value);
+                var userInput = [{
+                    "scores": userScore
+                }];
+            }
+            console.log(userScore);
+            console.log(userInput);
+            $.post("api/new", {
+                userInput
+            }, function (res) {
+                console.log(res);
+                console.log('test');
+                console.log(res.name);
+                var h3 = document.createElement("H3");
+                var match = document.getElementById('match');
+                var p = document.createElement("picture");
+                var img = document.createElement("img");
+                var btn = document.createElement("button");
+                var bt = document.createTextNode("DELETE");
+                var nt = document.createTextNode(res.name);
+
+                match.style.display = 'flex';
+
+
+                h3.setAttribute("id", "matchName");
+                h3.appendChild(nt);
+                match.appendChild(h3);
+                img.setAttribute("src", res.photo);
+                p.appendChild(img);
+                p.setAttribute("id", "matchPhoto")
+                match.appendChild(p);
+
+                //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
+            }).done(function () {
+                console.log('success');
+            }).fail(function () {
+                alert("error");
+            });
         });
-    });
-    // var totalUser = userScore.reduce((a, b) => a + b + 0, 0);
-    // console.log(totalUser);
+    };
 </script>
+<!-- document.querySelector( '#btn' )
+        .addEventListener( 'click', function(){
+    var el = document.querySelector( '.testBox' );
+    el.parentNode.removeChild( el );
+}); -->
 
 </html>

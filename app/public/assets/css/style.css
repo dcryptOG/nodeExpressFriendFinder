@@ -136,24 +136,6 @@ a {
     height: 10vh;
 }
 
-/* .content {
-  display: flex;
-  flex-direction: column;
-}
-
-.textcontainer {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  overflow-wrap: break-word;
-  background: #FFF;
-}
-
-.item {
-  border: 1px solid #ED9999;
-  padding: 14px;
-  width: 34%; */
-
 .content {
     flex: 1 0 auto;
     width: 100vw;
@@ -203,7 +185,6 @@ picture {
 
 picture>img {
     display: flex;
-
     margin: auto;
     max-height: 25vw;
     max-width: 25vw;
@@ -308,7 +289,12 @@ select option:focus-within {
 }
 
 #match {
-    display
+    display: none;
+    margin: auto;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    flex-flow: column wrap;
 }
 
 /* FOOTER====================================================================================================== */
@@ -362,10 +348,6 @@ footer {
 .footLink:hover {
     background: rgba(255, 255, 255, 0.5);
     color: black;
-}
-
-#match {
-    flex-flow: column wrap;
 }
 
 /* animations================================================= */
