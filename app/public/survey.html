@@ -6,11 +6,10 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <!-- <link rel="stylesheet" href="assets/css/animate.css"> -->
     <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-    <!-- <script src="assets/js/app.js"></script> -->
+
 
     <title>Dating App</title>
 </head>
@@ -199,67 +198,8 @@
         </footer>
     </section>
 </body>
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-    window.onload = function () {
-        var userName = document.getElementById('name');
-        var userPhoto = document.getElementById('photo');
-        var score = document.getElementsByClassName('scoreMenu');
-        var text = document.getElementsByClassName('textInput');
-        var subBox = document.getElementById('subBox');
-        var userScore = [];
-
-        var currentURL = window.location.origin;
-        // this info can be sent from survey in app.js
-
-        submit.addEventListener('click', function (event) {
-            event.preventDefault();
-            var currentURL = window.location.origin;
-            var user = String(userName.value);
-            var photo = String(userPhoto.value);
-            for (var i = 0; i < score.length; i++) {
-                userScore.push(score[i].value);
-                var userInput = [{
-                    "scores": userScore
-                }];
-            }
-            console.log(userScore);
-            console.log(userInput);
-            $.post("api/new", {
-                userInput
-            }, function (res) {
-                console.log(res);
-                console.log('test');
-                console.log(res.name);
-
-                var matchName = document.getElementById("matchName");
-                var nt = document.createTextNode(res.name);
-                var match = document.getElementById('match');
-                var p = document.getElementById("matchPic");
-                var img = document.createElement("img");
-                var matchScore = document.getElementById("matchScore");
-                var st = document.createTextNode(res.scores);
-                var a = document.getElementById("again");
-                match.style.display = 'flex';
-
-                matchName.appendChild(nt);
-                img.setAttribute("src", res.photo);
-                p.appendChild(img);
-                matchScore.appendChild(st);
-                a.style.display = 'flex';
-                //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
-            }).done(function () {
-                console.log('success');
-            }).fail(function () {
-                alert("error");
-            });
-        });
-    };
-</script>
-<!-- document.querySelector( '#btn' )
-        .addEventListener( 'click', function(){
-    var el = document.querySelector( '.testBox' );
-    el.parentNode.removeChild( el );
-}); -->
+<script src="assets/js/app.js"></script>
 
 </html>
