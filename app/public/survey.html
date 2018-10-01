@@ -22,6 +22,9 @@
                 <a href="home.html">&#10084; Dating App &#10084;</a>
             </nav>
             <div class='flex-container' id='match'>
+                <p id='matchName'></p>
+                <picture id='matchPic'></picture>
+                <p id='matchScore'></p>
                 <button type="button" onClick="window.location.reload();">Close</button>
             </div>
         </header>
@@ -227,24 +230,20 @@
                 console.log(res);
                 console.log('test');
                 console.log(res.name);
-                var h3 = document.createElement("H3");
-                var match = document.getElementById('match');
-                var p = document.createElement("picture");
-                var img = document.createElement("img");
-                var btn = document.createElement("button");
-                var bt = document.createTextNode("DELETE");
-                var nt = document.createTextNode(res.name);
 
+                var matchName = document.getElementById("matchName");
+                var nt = document.createTextNode(res.name);
+                var match = document.getElementById('match');
+                var p = document.getElementById("matchPic");
+                var img = document.createElement("img");
+                var matchScore = document.getElementById("matchScore");
+                var st = document.createTextNode(res.scores);
                 match.style.display = 'flex';
 
-
-                h3.setAttribute("id", "matchName");
-                h3.appendChild(nt);
-                match.appendChild(h3);
+                matchName.appendChild(nt);
                 img.setAttribute("src", res.photo);
                 p.appendChild(img);
-                p.setAttribute("id", "matchPhoto")
-                match.appendChild(p);
+                matchScore.appendChild(st);
 
                 //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
             }).done(function () {
