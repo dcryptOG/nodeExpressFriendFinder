@@ -164,13 +164,13 @@ a {
 
 .pad {
     width: 90vw;
-    background: solid rgba(245, 245, 245, 0.3);
+    /* background: solid rgba(245, 245, 245, 0.3); */
     display: flex;
     flex-flow: row nowrap;
     margin: auto;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    border: 0.1vw solid rgba(245, 245, 245, 0.3);
+    /* border: 0.1vw solid rgba(245, 245, 245, 0.3); */
 }
 
 picture {
