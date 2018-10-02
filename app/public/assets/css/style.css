@@ -67,6 +67,7 @@ body {
     from {
         background-position: 0 0;
     }
+
     to {
         background-position: 100vw 0;
     }
@@ -240,7 +241,7 @@ picture>img {
     text-align: center;
     border: 0.05rem solid rgba(245, 245, 245, 0.2);
     border-radius: 0.1rem;
-    padding: 0.1rem;
+    padding: 0.5rem;
 }
 
 #content>.flex-container>input {
@@ -288,7 +289,8 @@ select:hover {
 }
 
 select:focus {
-    border: 0.1rem solid rgba(229, 57, 53);
+    border: 0.1rem solid rgb(224, 133, 131);
+    height: 5vh;
 }
 
 select option {
@@ -329,7 +331,7 @@ select option:focus-within {
 }
 
 .love {
-    margin: auto;
+    margin: 2vh auto;
 }
 
 #match>p {
@@ -432,23 +434,26 @@ footer {
     0% {
         transform: scale(1);
     }
+
     25% {
         transform: scale(1.1);
     }
+
     40% {
         transform: scale(1);
     }
+
     60% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
 }
 
-select option,
 input:focus,
-select:hover,
+p:hover,
 nav:hover,
 nav>a:hover,
 a:hover,
@@ -461,10 +466,12 @@ a:hover,
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+
     50% {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
+
     100% {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -476,10 +483,12 @@ a:hover,
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
     }
+
     50% {
         -webkit-transform: scale3d(1.05, 1.05, 1.05);
         transform: scale3d(1.05, 1.05, 1.05);
     }
+
     to {
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
@@ -498,9 +507,11 @@ a:hover,
     0% {
         background-position-x: 0vw;
     }
+
     100% {
         background-position-x: 100vw;
     }
+
     0% {
         background-position-x: 0vw;
     }
