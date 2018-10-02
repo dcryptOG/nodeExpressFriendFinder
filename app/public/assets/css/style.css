@@ -68,7 +68,7 @@ body {
     align-self: auto;
     justify-self: auto;
     margin: auto;
-    background: url(../img/hearts.jpg) no-repeat center center fixed;
+    background-image: url(../img/hearts.jpg) no-repeat center center fixed;
     background-size: cover;
     width: 100vw;
     height: 100vh;
