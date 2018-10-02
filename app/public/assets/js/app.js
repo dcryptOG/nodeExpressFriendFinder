@@ -3,18 +3,18 @@ window.onload = function () {
     var userPhoto = document.getElementById('photo');
     var score = document.getElementsByClassName('scoreMenu');
     var text = document.getElementsByClassName('textInput');
-    var ghost = document.getElementById('ghost');
+    // var ghost = document.getElementById('ghost');
     var submit = document.getElementById('submit');
     var userScore = [];
 
     var currentURL = window.location.origin;
     // this info can be sent from survey in app.js
 
-    ghost.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("test");
-        submit.style.display = 'none';
-    });
+    // ghost.addEventListener('click', function (event) {
+    //     event.preventDefault();
+    //     console.log("test");
+    //     submit.style.display = 'none';
+    // });
 
     submit.addEventListener('click', function (event) {
         event.preventDefault();
@@ -35,7 +35,7 @@ window.onload = function () {
             console.log(res);
             console.log('test');
             console.log(res.name);
-
+            var box = document.getElementById('submitBox');
             var matchName = document.getElementById("matchName");
             var nt = document.createTextNode(res.name);
             var match = document.getElementById('match');
@@ -50,6 +50,7 @@ window.onload = function () {
             img.setAttribute("src", res.photo);
             p.appendChild(img);
             matchScore.appendChild(st);
+            box.style.display = 'none';
             // a.style.display = 'flex';
             //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
         }).done(function () {
