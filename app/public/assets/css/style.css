@@ -190,7 +190,7 @@ picture {
     box-sizing: border-box;
     overflow: hidden;
     flex-grow: 1;
-    max-height: 30vw;
+    max-height: 22.5vh;
     max-width: 30vw;
     margin: 0 auto;
     border-radius: 1em;
@@ -199,7 +199,7 @@ picture {
 picture>img {
     display: flex;
     margin: 0;
-    max-height: 25vw;
+    max-height: 22.5vh;
     max-width: 25vw;
     padding: 0;
     flex-grow: 1;
