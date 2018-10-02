@@ -331,7 +331,6 @@ select option:focus-within {
     font-family: var(--font-heading);
     font-size: var(--size-big);
     font-weight: bolder;
-    height: 150%;
 }
 
 #matchName {
