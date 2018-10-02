@@ -3,10 +3,18 @@ window.onload = function () {
     var userPhoto = document.getElementById('photo');
     var score = document.getElementsByClassName('scoreMenu');
     var text = document.getElementsByClassName('textInput');
+    var ghost = document.getElementById('ghost');
+    var submit = document.getElementById('submit');
     var userScore = [];
 
     var currentURL = window.location.origin;
     // this info can be sent from survey in app.js
+
+    ghost.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("test");
+        submit.style.display = 'none';
+    });
 
     submit.addEventListener('click', function (event) {
         event.preventDefault();
@@ -35,14 +43,14 @@ window.onload = function () {
             var img = document.createElement("img");
             var matchScore = document.getElementById("matchScore");
             var st = document.createTextNode(res.scores);
-            var a = document.getElementById("again");
+            // var a = document.getElementById("again");
             match.style.display = 'flex';
 
             matchName.appendChild(nt);
             img.setAttribute("src", res.photo);
             p.appendChild(img);
             matchScore.appendChild(st);
-            a.style.display = 'flex';
+            // a.style.display = 'flex';
             //document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
         }).done(function () {
             console.log('success');

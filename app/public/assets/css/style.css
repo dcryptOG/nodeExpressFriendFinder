@@ -59,6 +59,18 @@ body {
     background-size: cover;
     width: 100vw;
     height: 100vh;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100vw 0;
+    }
 }
 
 p::selection {
@@ -345,6 +357,19 @@ select option:focus-within {
     width: 20vw;
 }
 
+#ghost {
+    z-index: -1;
+    opacity: 0;
+    background: transparent;
+    display: flex;
+    flex-grow: 1;
+    object-fit: fill;
+    margin: auto;
+    width: 30em;
+    height: 4em;
+    position: absolute;
+}
+
 /* FOOTER====================================================================================================== */
 
 .footer {
@@ -399,6 +424,7 @@ footer {
 }
 
 /* animations================================================= */
+
 .love {
     animation: .8s infinite beatHeart;
 }
