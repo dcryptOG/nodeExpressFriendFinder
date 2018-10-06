@@ -41,10 +41,12 @@ module.exports = function (app) {
             var totalDiff = Math.abs(totalFriends - totalUser);
             diff.push(totalDiff);
         };
-        // console.log(diff);
+        console.log(diff);
+        // var shallowCopy = fruits.slice(); // this is how to make a copy
+        // ["Strawberry", "Mango"]
         // diff is a NEW array with SAME INDEX or KEY as FRIENDS(original) DIFFERENT VALUES. 
         // BELOW finds the min of the array and matches the KEY or INDEX#
-
+        // console.log(min);
         let min = Math.min(...diff)
         // console.log(min);
         let matchI = diff.indexOf(min)
